@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#121212">
+
+    <!-- PAINEL DE INFORMAÇÃO GPS -->
+    <TextView
+        android:id="@+id/tvGpsInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📍 GPS: Buscando localização..."
+        android:textColor="#BBBBBB"
+        android:textSize="12sp"
+        android:padding="4dp" />
+
+    <!-- PAINEL DE CONFIGURAÇÃO DE ENDEREÇO E PERFIL DE RÁDIO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Endereço: "
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spEnderecos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnModoRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="🍃 Eco"
+            android:textSize="12sp"
+            android:backgroundTint="#388E3C"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- PAINEL DE MONITORAMENTO / TELEMETRIA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnMonitoramento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="📊 MONITORAR: OFF"
+            android:textSize="11sp"
+            android:backgroundTint="#616161"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnExportarLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="📁 LOG CSV"
+            android:textSize="11sp"
+            android:backgroundTint="#7B1FA2"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnLimparLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="🗑️ LIMPAR"
+            android:textSize="11sp"
+            android:backgroundTint="#C62828"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- BOTÃO SOS EM DESTAQUE -->
+    <Button
+        android:id="@+id/btnSos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="🚨 ENVIAR SOS (BROADCAST)"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#D32F2F"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnConectar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="🔌 CONECTAR USB"
+        android:backgroundTint="#2196F3" />
+
+    <Button
+        android:id="@+id/btnScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="🔍 LOCALIZAR MÓDULOS" />
+
+    <!-- ÁREA CENTRAL DE STATUS E LISTA -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp"
+        android:background="#1E1E1E"
+        android:padding="12dp"
+        android:text="Status: Desconectado"
+        android:textColor="#FFFFFF" />
+
+    <!-- PAINEL DE ALERTA SOS RECEBIDO (RODAPÉ) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#262626"
+        android:padding="10dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical">
+
+        <View
+            android:id="@+id/viewLedSos"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@android:color/holo_green_light" />
+
+        <TextView
+            android:id="@+id/tvAlertaSos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:text="Rede Normal (Nenhum SOS ativo)"
+            android:textColor="#888888"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
